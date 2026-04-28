@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Multi-Stakeholder Marketing in Independent Cultural Institutions — B. Sava Kayhan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#18160f;--ink2:#45423a;--ink3:#8c897f;
+  --bg:#f5f2eb;--bg2:#edeae1;--bg3:#e3dfd4;
+  --acc:#1e4d2b;--acc2:#143320;--acc3:#d4ede0;
+  --gold:#9a6b00;--gold2:#fdf3dc;
+  --coral:#b84030;--blue:#1e3d6b;--blue2:#e4ecf7;
+  --bd:rgba(24,22,15,.09);--r:8px;--rl:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(245,242,235,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+.nav-brand{font-family:'Playfair Display',serif;font-size:15px;color:var(--acc)}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-size:12px;color:var(--ink3);padding:0 .9rem;transition:color .15s}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{font-size:12px;padding:5px 14px;border-radius:20px;background:var(--acc);color:#fff;margin-left:.5rem}
+.nav-cta:hover{text-decoration:none;background:var(--acc2)}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 5rem;text-align:center;position:relative;background:linear-gradient(175deg,var(--bg) 0%,var(--bg2) 100%)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 65%,rgba(30,77,43,.055) 0%,transparent 70%);pointer-events:none}
+.hero-chip{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(30,77,43,.22);padding:4px 14px;border-radius:20px;margin-bottom:2.5rem}
+.hero-chip i{width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.9rem);line-height:1.1;max-width:820px;margin:0 auto 1.5rem}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero-sub{font-size:1.05rem;color:var(--ink2);font-weight:300;max-width:560px;margin:0 auto 2.5rem;line-height:1.85}
+.stat-row{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;padding:1.75rem 2.5rem;background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);margin-bottom:2.5rem}
+.stat-item{text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--acc);line-height:1}
+.stat-l{font-size:11px;color:var(--ink3);margin-top:.2rem}
+.chips{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.chip{font-size:11px;padding:3px 11px;border-radius:20px;background:var(--bg2);color:var(--ink3);border:1px solid var(--bd)}
+.chip.p{background:var(--acc3);color:var(--acc);border-color:rgba(30,77,43,.2);font-weight:500}
+
+/* SECTION */
+section{padding:5rem 2rem}
+section:nth-child(even){background:var(--bg2)}
+.con{max-width:960px;margin:0 auto}
+.slbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:.5rem;font-weight:500}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,3vw,2.4rem);line-height:1.2;margin-bottom:.9rem}
+.sintro{color:var(--ink2);max-width:640px;margin-bottom:2.75rem;font-weight:300;font-size:1.02rem}
+.prose{font-size:.95rem;color:var(--ink2);line-height:1.8;max-width:720px}
+.prose p{margin-bottom:1rem}
+.prose p:last-child{margin-bottom:0}
+
+/* CARDS */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card{background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);padding:1.4rem;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.055)}
+.card h3{font-size:14px;font-weight:500;margin-bottom:.45rem}
+.card p{font-size:13px;color:var(--ink2);line-height:1.6}
+.card .pills{display:flex;flex-wrap:wrap;gap:3px;margin-top:.6rem}
+.pill{font-size:11px;padding:2px 9px;border-radius:12px;background:var(--bg2);color:var(--ink3)}
+
+/* ACCENT BARS */
+.banner{display:grid;grid-template-columns:3px 1fr;gap:1.25rem;align-items:start;background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);padding:1.4rem 1.6rem;margin-bottom:2rem}
+.banner-line{border-radius:2px}
+.blbl{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem}
+.btxt{font-size:13px;color:var(--ink2);line-height:1.7}
+
+/* LANG CARDS */
+.lcard{background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);padding:1.4rem;position:relative;overflow:hidden}
+.lcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.lg::before{background:var(--gold)}.la::before{background:var(--acc)}.lb::before{background:var(--blue)}
+.lwho{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:.6rem}
+.lg .lwho{color:var(--gold)}.la .lwho{color:var(--acc)}.lb .lwho{color:var(--blue)}
+.lcard h3{font-size:14px;font-weight:500;margin-bottom:.4rem}
+.lcard p{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:.6rem}
+
+/* COUNTRY TABS */
+.ctabs{display:flex;gap:0;border-bottom:1px solid var(--bd);margin-bottom:2rem}
+.ctab{padding:.6rem 1.2rem;font-size:13px;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;background:none;font-family:'Inter',sans-serif}
+.ctab.on{color:var(--acc);border-bottom-color:var(--acc);font-weight:500}
+.cpanel{display:none}.cpanel.on{display:block;animation:fi .2s}
+
+/* OWNERSHIP */
+.ownrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.75rem}
+.own{background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);padding:1.6rem;position:relative;overflow:hidden}
+.own::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.oa::before{background:var(--acc)}.ob::before{background:var(--blue)}.og::before{background:var(--gold)}
+.ownpct{font-family:'Playfair Display',serif;font-size:3rem;line-height:1;margin-bottom:.2rem}
+.oa .ownpct{color:var(--acc)}.ob .ownpct{color:var(--blue)}.og .ownpct{color:var(--gold)}
+.ownnm{font-size:14px;font-weight:500;margin-bottom:.4rem}
+.ownd{font-size:13px;color:var(--ink2);line-height:1.5}
+.ownsrc{font-size:11px;color:var(--ink3);margin-top:.65rem;font-style:italic}
+
+/* FINANCE BARS */
+.fwrap{max-width:560px;margin-bottom:2rem}
+.frow{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem}
+.flbl{font-size:13px;color:var(--ink2);width:150px;flex-shrink:0}
+.ftrk{flex:1;height:7px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.ffil{height:100%;border-radius:4px}
+.fpct{font-size:13px;font-weight:500;width:32px;text-align:right}
+.frule{padding:.7rem 1rem;background:var(--acc3);border-radius:var(--r);font-size:13px;color:var(--acc);border:1px solid rgba(30,77,43,.18);margin-top:1rem}
+
+/* DIGITAL TABS */
+.dtabs{display:flex;gap:5px;margin-bottom:1.4rem;flex-wrap:wrap}
+.dtab{padding:5px 15px;border-radius:20px;border:1px solid var(--bd);font-size:13px;cursor:pointer;color:var(--ink3);background:transparent;transition:all .15s;font-family:'Inter',sans-serif}
+.dtab.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.dpanel{display:none}.dpanel.on{display:block;animation:fi .2s}
+
+/* SIMULATOR */
+.simbox{background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);padding:2rem}
+.simintro{font-size:14px;color:var(--ink2);margin-bottom:1.6rem;line-height:1.7;font-weight:300}
+.simlbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:.8rem}
+.slgrid{display:grid;gap:11px;margin-bottom:1.4rem}
+.slrow{display:grid;grid-template-columns:145px 1fr 40px;align-items:center;gap:10px}
+.sllbl{font-size:13px;color:var(--ink2)}
+.slval{font-size:13px;font-weight:500;text-align:right;color:var(--ink)}
+.totrow{display:flex;align-items:center;gap:8px;padding-top:10px;border-top:1px solid var(--bd);margin-bottom:1.6rem}
+.totlbl{font-size:12px;color:var(--ink3);flex:1}
+.totval{font-size:13px;font-weight:500}
+.tv-ok{color:#1e6b3a}.tv-warn{color:#8a5a00}.tv-bad{color:#b83020}
+.resgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:1.1rem}
+.rcard{border-radius:var(--r);border:1px solid var(--bd);padding:11px;background:var(--bg);transition:all .3s}
+.rcard.c-ok{border-color:rgba(30,107,58,.35);background:rgba(212,237,224,.25)}
+.rcard.c-warn{border-color:rgba(138,90,0,.3);background:rgba(253,243,220,.4)}
+.rcard.c-bad{border-color:rgba(184,64,48,.3);background:rgba(252,236,234,.4)}
+.rw{font-size:10px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;margin-bottom:4px}
+.rwf{color:var(--gold)}.rws{color:var(--acc)}.rwi{color:var(--blue)}
+.rt{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px}
+.rb{font-size:12px;color:var(--ink2);line-height:1.5}
+.rtag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:10px;margin-top:4px;font-weight:500}
+.tg-ok{background:rgba(30,77,43,.1);color:var(--acc)}
+.tg-warn{background:rgba(154,107,0,.1);color:var(--gold)}
+.tg-bad{background:rgba(184,64,48,.1);color:var(--coral)}
+.insbox{padding:11px 15px;border-left:2px solid var(--bd);background:var(--bg2);border-radius:0 var(--r) var(--r) 0;font-size:13px;color:var(--ink2);line-height:1.65}
+.insbox b{color:var(--ink);font-weight:500}
+.mrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:1.1rem;align-items:center}
+.mbtn{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;border:1px solid var(--bd);font-size:12px;color:var(--ink2);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.mbtn:hover{background:var(--bg2)}
+.mdot{width:7px;height:7px;border-radius:50%}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:1.75rem;margin-top:1.75rem}
+.tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--bd)}
+.tli{position:relative;margin-bottom:2rem}
+.tldot{position:absolute;left:-1.75rem;top:4px;width:15px;height:15px;border-radius:50%;border:2px solid var(--bg2);outline:2px solid currentColor}
+.tlwhen{font-size:12px;color:var(--ink3);margin-bottom:.2rem}
+.tlwhat{font-size:15px;font-weight:500;margin-bottom:.3rem}
+.tlhow{font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* TENSIONS */
+.tengrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.tencard{border-left:3px solid var(--coral);background:var(--bg);border-radius:0 var(--r) var(--r) 0;padding:1.2rem}
+.tencard h4{font-size:14px;font-weight:500;color:var(--coral);margin-bottom:.35rem}
+.tencard p{font-size:13px;color:var(--ink2);line-height:1.55}
+
+/* REFERENCES */
+.reflist{column-count:2;column-gap:2rem;margin-top:1.5rem}
+.refitem{font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:.6rem;break-inside:avoid}
+.refitem a{color:var(--acc);font-size:11px}
+
+/* SYN CARDS */
+.syng{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.sync{border-radius:var(--rl);border:1px solid var(--bd);padding:1.4rem;background:var(--bg)}
+.sy-g{border-top:3px solid var(--gold)}.sy-g h3{color:var(--gold)}
+.sy-a{border-top:3px solid var(--acc)}.sy-a h3{color:var(--acc)}
+.sy-b{border-top:3px solid var(--blue)}.sy-b h3{color:var(--blue)}
+.sync h3{font-size:14px;font-weight:500;margin-bottom:.4rem}
+.sync p{font-size:13px;color:var(--ink2);line-height:1.6}
+
+/* UTILS */
+@keyframes fi{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.vis{opacity:1;transform:none}
+.gap{height:2.5rem}
+.note{background:var(--bg2);border-left:2px solid var(--acc);border-radius:0 var(--r) var(--r) 0;padding:.7rem 1rem;font-size:13px;color:var(--ink2);margin:.75rem 0 1.25rem}
+
+/* FOOTER */
+footer{padding:2.5rem 2rem;border-top:1px solid var(--bd);text-align:center}
+footer p{font-size:12px;color:var(--ink3);line-height:1.8}
+footer strong{color:var(--ink2)}
+
+@media(max-width:700px){
+  .g3,.g2,.g4,.ownrow,.tengrid,.syng,.resgrid{grid-template-columns:1fr}
+  .nav-links,.nav-cta{display:none}
+  .reflist{column-count:1}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">B. Sava Kayhan · 2026</span>
+  <ul class="nav-links">
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#countries">Countries</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="#simulator">Simulator</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+  <a class="nav-cta" href="#simulator">Try the simulator</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-chip"><i></i>Graduation Research Project · April 2026</div>
+  <h1>Multi-Stakeholder Marketing in<br><em>Independent Cultural Institutions</em></h1>
+  <p class="hero-sub">A comparative analysis from sustainability, artist ecosystem, and audience engagement perspectives — with Denmark as the primary case.</p>
+  <div class="stat-row">
+    <div class="stat-item"><div class="stat-n">460+</div><div class="stat-l">Danish cultural houses</div></div>
+    <div class="stat-item"><div class="stat-n">16M</div><div class="stat-l">annual visitors</div></div>
+    <div class="stat-item"><div class="stat-n">3</div><div class="stat-l">countries compared</div></div>
+    <div class="stat-item"><div class="stat-n">6</div><div class="stat-l">institutions analysed</div></div>
+  </div>
+  <div class="chips">
+    <span class="chip p">Kulturhusene i Danmark (primary case)</span>
+    <span class="chip">Fasching Stockholm</span>
+    <span class="chip">Melkweg Amsterdam</span>
+    <span class="chip">Freeman (1984)</span>
+    <span class="chip">Qualitative · Digital content analysis</span>
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<section id="abstract">
+  <div class="con">
+    <div class="slbl">Abstract</div>
+    <h2 class="stitle">Research overview</h2>
+    <div class="prose">
+      <p>Independent cultural institutions play a critical role in artistic production, cultural participation, and social cohesion; however, following decades of relative stability, they now face profound pressures for transformation with regard to both funding and audience demand (Bakhshi & Throsby, 2010). Constraints on public budgets and increasing demands for accountability directly affect both the volume and conditions of funding, while audiences increasingly expect more customer-oriented strategies.</p>
+      <p>This study examines the multi-stakeholder marketing strategies of these institutions — encompassing funders, artists, and audiences (Freeman, 1984) — from a comparative perspective. Denmark serves as the primary case study, while Sweden and the Netherlands provide comparative contextual models. A qualitative research design is adopted, combining literature review, sector report analysis, and digital content analysis of six institutions (January–March 2026).</p>
+      <p>The findings indicate that traditional marketing approaches are insufficient on their own; institutional success is increasingly associated with stakeholder-oriented communication strategies (Preece & Kerrigan, 2015). Most significantly, the study demonstrates that <strong>the funding model directly shapes communication strategy</strong> — and that no universal multi-stakeholder marketing framework can be adequate for independent cultural institutions across different national contexts.</p>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem">
+      <span class="pill">independent cultural institutions</span>
+      <span class="pill">multi-stakeholder marketing</span>
+      <span class="pill">cultural sustainability</span>
+      <span class="pill">audience engagement</span>
+      <span class="pill">digital marketing</span>
+      <span class="pill">Scandinavian cultural policy</span>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework">
+  <div class="con">
+    <div class="slbl">Conceptual framework</div>
+    <h2 class="stitle">Three stakeholders, three languages</h2>
+    <p class="sintro">The core tension: funders, artists and audiences each speak a fundamentally different value language. Successful institutions translate all three simultaneously.</p>
+
+    <div class="banner reveal">
+      <div class="banner-line" style="background:var(--coral)"></div>
+      <div>
+        <div class="blbl" style="color:var(--coral)">The vicious cycle — Denmark's structural problem</div>
+        <div class="btxt">Institutions create impact but cannot prove it → funding stays constrained → data cannot be collected → impact remains invisible. Sweden's arm's-length paradox and the Netherlands' hybrid funding maturity were used to map solutions to these gaps.</div>
+      </div>
+    </div>
+
+    <div class="g3 reveal">
+      <div class="lcard lg">
+        <div class="lwho">Funder language</div>
+        <h3>Measurable impact</h3>
+        <p>Numbers, SROI, reach rates, accountability reports, policy alignment, innovative project outputs. The triple bottom line: social, economic and environmental value (Loach et al., 2017).</p>
+        <div class="pills"><span class="pill">Municipality</span><span class="pill">Foundation</span><span class="pill">EU funding</span></div>
+      </div>
+      <div class="lcard la">
+        <div class="lwho">Artist language</div>
+        <h3>Autonomy and fair pay</h3>
+        <p>Creative freedom, production without market pressure, Fair Practice compliance, visibility, experimental space. The institution as R&D platform (Tavano Blessi et al., 2011).</p>
+        <div class="pills"><span class="pill">Autonomy</span><span class="pill">Fair Practice</span><span class="pill">Residency</span></div>
+      </div>
+      <div class="lcard lb">
+        <div class="lwho">Audience language</div>
+        <h3>Belonging and connection</h3>
+        <p>Safe space, social connection, sense of ownership, low threshold, interest community. Primary motivation is social bonding, not aesthetic content (Murray, 2005; Oldenburg, 1999).</p>
+        <div class="pills"><span class="pill">Membership</span><span class="pill">3rd place</span><span class="pill">Community</span></div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+    <h3 style="font-size:16px;font-weight:500;margin-bottom:1rem">Key theoretical sources</h3>
+    <div class="g4 reveal">
+      <div class="card"><h3>Freeman (1984)</h3><p>Stakeholder theory: organisational success depends on the capacity to balance conflicting interests across stakeholder groups.</p></div>
+      <div class="card"><h3>Walmsley (2016)</h3><p>Digital platforms have the potential to transform audiences from passive recipients into co-creators of cultural meaning.</p></div>
+      <div class="card"><h3>Fassin (2012)</h3><p>Power is asymmetrically distributed across stakeholders. Reciprocity is the core mechanism for managing conflict.</p></div>
+      <div class="card"><h3>Civera et al. (2025)</h3><p>Multi-stakeholder marketing requires contextual applications — no single framework fits all settings.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section>
+  <div class="con">
+    <div class="slbl">Methodology</div>
+    <h2 class="stitle">Research design</h2>
+    <p class="sintro">A qualitative, multi-case comparative design. Three data sources triangulated for credibility.</p>
+    <div class="g3 reveal">
+      <div class="card">
+        <h3>Literature review</h3>
+        <p>Google Scholar, JSTOR and Scopus databases. Peer-reviewed journals in cultural economics, arts marketing, stakeholder theory and digital marketing. Classic works (Freeman, 1984) alongside post-2000 publications.</p>
+      </div>
+      <div class="card">
+        <h3>Sector report analysis</h3>
+        <p>Statens Kunstfond reports, Kulturhusene i Danmark action plans, Danmarks Statistik (2023), Nordicom Mediebarometern (2025), Cultuurmonitor (2023) and European cultural policy documents.</p>
+      </div>
+      <div class="card">
+        <h3>Digital content analysis</h3>
+        <p>Jan–Mar 2026. Six institutions: UNION Kulturhuset & Kulturhuset Islands Brygge (DK), Södra Teatern & Fasching (SE), Melkweg & De Balie (NL). Three dimensions: funder communication, artist relations, audience engagement.</p>
+      </div>
+    </div>
+    <div class="note reveal">Country selection criteria: strong cultural policy traditions, meaningful variation in funding models, accessible data and an underrepresented Scandinavian/North European comparative context.</div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section id="countries">
+  <div class="con">
+    <div class="slbl">Country contexts</div>
+    <h2 class="stitle">Three models compared</h2>
+    <p class="sintro">Each country produces a distinct set of strategic requirements for independent cultural institutions.</p>
+
+    <div class="ctabs">
+      <button class="ctab on" onclick="showC('c-dk',this)">Denmark (primary)</button>
+      <button class="ctab" onclick="showC('c-se',this)">Sweden</button>
+      <button class="ctab" onclick="showC('c-nl',this)">Netherlands</button>
+      <button class="ctab" onclick="showC('c-comp',this)">Comparison</button>
+    </div>
+
+    <div id="c-dk" class="cpanel on">
+      <div class="g2" style="margin-bottom:1.5rem">
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">Funding system</h3>
+          <div class="prose">
+            <p>Denmark has one of Europe's strongest cultural funding systems. Total public expenditure on culture reached 27.3 billion DKK in 2023 (Danmarks Statistik, 2023), split roughly 58% central state / 42% municipalities. Statens Kunstfond (founded 1964) distributed over 692 million DKK in 2024 across 60+ programmes via 16 specialist committees. The Performing Arts Project Support Committee alone distributed 129.7 million DKK to small theatres and independent performing arts in 2024.</p>
+            <p>At municipal level, approximately 460 cultural houses (kulturhus) serve 16 million visitors annually with 2,600 staff and 8,900 volunteers (Kulturhusene i Danmark, 2023). A shift toward hybrid funding models — incorporating private companies, foundations and urban development projects — is increasingly observable.</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">Copenhagen scene & digital profile</h3>
+          <div class="prose">
+            <p>The kulturhus concept in Copenhagen is built on functional, participatory identity rather than physical architecture. UNION Kulturhuset in Nørrebro hosts 400+ events annually under 20+ associations. Kulturhuset Islands Brygge hosts approximately 350 events per year. Both operate with hybrid funding and combine professional and amateur programming.</p>
+            <p>Denmark is among the world's highest digital participation countries: 99% internet penetration, 79.7% social media usage as of January 2024. Facebook leads with 78%+ market share; Instagram has ~2.5 million users. Among 15–24 year-olds, Snapchat, Instagram and TikTok dominate (DataReportal, 2024).</p>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="banner-line" style="background:var(--acc)"></div>
+        <div>
+          <div class="blbl" style="color:var(--acc)">Digital content finding — UNION Kulturhuset</div>
+          <div class="btxt">5,499 Instagram followers vs. 11,809 Facebook likes — reflecting the national demographic split. Event announcements dominate both platforms; two-way dialogue formats are minimal. Walmsley's dialogue potential is present in theory; structural resource constraints prevent it in practice. The key question this raises: is the barrier to digital dialogue a lack of intent, or a lack of structural capacity? Denmark's case points to the latter.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="c-se" class="cpanel">
+      <div class="g2" style="margin-bottom:1.5rem">
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">The arm's-length paradox</h3>
+          <div class="prose">
+            <p>Sweden institutionalised cultural policy relatively late: an independent cultural policy field emerged only from 1974; an independent Ministry of Culture was established in 1991 (Larsson & Svenson, 2001). The 1974 Riksdag resolution defined cultural participation as a universal welfare right. Funding is split roughly: state 47%, municipalities 45%, regional bodies 8%.</p>
+            <p>Sweden operates an arm's-length principle — government sets objectives but delegates resource allocation to independent experts. However, this produces a structural paradox for independent institutions: <strong>less than 5% of total state theatre subsidy reaches independent groups</strong> (Larsson & Svenson, 2001, p. 90). Rising rents and urban development pressure further compound this.</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">Fasching — the countermodel</h3>
+          <div class="prose">
+            <p>Stockholm's infrastructure includes 89 museums, 130 libraries, 80 cultural centres and 93 theatre stages. Among independent institutions, Södra Teatern (est. 1859) hosts 500+ events and 250,000 visitors annually across 7 stages. Fasching (est. 1977) is Sweden's leading independent jazz venue.</p>
+            <p>Fasching's ownership structure is exceptional: majority owner is Föreningen Sveriges Jazzmusiker (FSJ — the musician association), minority partner is Faschings Vänner, an audience membership association of 4,000 members. Members pay 250 SEK/year for 25% concert discounts. This structure balances artist autonomy, audience ownership and funder accountability within a single institution.</p>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="banner-line" style="background:var(--blue)"></div>
+        <div>
+          <div class="blbl" style="color:var(--blue)">Digital content finding — Södra Teatern vs. Fasching</div>
+          <div class="btxt">Södra Teatern's website foregrounds venue hire and corporate events alongside cultural programming — with Coca-Cola, Heineken and Uber among featured partners. This signals an implicit shift from independent cultural venue toward commercial event space. Fasching, by contrast, maintains strong programmatic identity on Facebook (46,722 likes, high engagement), reflecting its musician-owned structure. The arm's-length paradox materialises in digital communication: constrained resources force independent institutions into commercial partnerships that dilute artistic identity.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="c-nl" class="cpanel">
+      <div class="g2" style="margin-bottom:1.5rem">
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">Mature hybrid funding</h3>
+          <div class="prose">
+            <p>Dutch cultural policy blends architect and guardian models, with arts funded at arm's length. A four-yearly 'cultuurnota' resets funding procedures and recipients (Loots et al., 2024). 71% of public cultural funding comes from municipalities (60%) and provincial authorities (11%). Private foundations play a significant role: Prins Bernard Cultuurfonds and VSBfonds support both large projects and artist grants.</p>
+            <p>Match-funding is increasingly central: every unit of private funding triggers a corresponding unit of public funding. Amsterdam's independent institutions — largely built on the legacy of 1980s squat movements — are organised as stichting (foundation) or vereniging (association) structures with ANBI tax-advantaged status.</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:15px;font-weight:500;margin-bottom:.75rem">Melkweg & De Balie</h3>
+          <div class="prose">
+            <p>Melkweg (est. 1970): ANBI foundation, all revenue reinvested in artist support. Main Instagram: 108,000 followers; plus @melkwegelectronic (12k), @melkweghiphop (15k), @melkwegfilm (1.6k), @melkwegexpo (9k). Instagram bio: "Old milk factory, now concerts, club, film, exhibitions and a cultural venue for young creators." Fair Practice Code and Diversiteit & Inclusie codes displayed transparently on website.</p>
+            <p>De Balie (est. 1982): 400+ events/year; Facebook: 58,000 likes, 70,000+ active engagement. Programme content live-streamed via Studio De Balie. This hybrid physical-digital model demonstrates Walmsley's (2016) co-creator thesis in practice — audiences become active participants in meaning-making.</p>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="banner-line" style="background:var(--gold)"></div>
+        <div>
+          <div class="blbl" style="color:var(--gold)">Digital content finding — the most mature model</div>
+          <div class="btxt">Melkweg's multi-channel segmentation is the most sophisticated digital strategy observed across the three countries. ANBI transparency on the website directly addresses funder accountability demands. Each Instagram channel speaks to a distinct artist-audience community. De Balie's live-streaming model converts digital access into genuine co-creation. The Netherlands' hybrid funding maturity directly enables this digital capacity — confirming the study's core finding: funding model shapes communication strategy.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="c-comp" class="cpanel">
+      <div class="prose" style="margin-bottom:1.5rem">
+        <p>The three countries diverge meaningfully on funding structure. Denmark's Statens Kunstfond-led system offers predictability and transparency for independent institutions. Sweden's arm's-length principle produces structural underfunding of independent organisations (less than 5% of subsidies). The Netherlands' cyclical policy planning and strong private foundation contributions create a multilayered funding ecosystem.</p>
+        <p>All three countries exceed the European average in internet penetration (DK: 99%, SE: 98.3%, NL: 99%); however, platform preferences and generational patterns require differentiated marketing strategies in each context.</p>
+      </div>
+      <div class="g3 reveal">
+        <div class="card" style="border-top:3px solid var(--acc)">
+          <h3 style="color:var(--acc)">Denmark</h3>
+          <p>Systematic funding, coordination network (460 institutions), strong digital infrastructure. Vulnerability: high public dependency, measurement paradox, limited digital dialogue capacity.</p>
+          <div class="pills"><span class="pill">Statens Kunstfond</span><span class="pill">Kulturhusene</span></div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--blue)">
+          <h3 style="color:var(--blue)">Sweden</h3>
+          <p>Arm's-length principle protects independence in theory. In practice: structural underfunding forces commercial partnerships (Södra Teatern). Fasching's ownership model shows a path out.</p>
+          <div class="pills"><span class="pill">FSJ ownership</span><span class="pill">Fasching model</span></div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--gold)">
+          <h3 style="color:var(--gold)">Netherlands</h3>
+          <p>Most mature hybrid model. Match-funding, ANBI transparency, multi-channel digital segmentation. Melkweg's 5-channel Instagram strategy is the benchmark for stakeholder-specific communication.</p>
+          <div class="pills"><span class="pill">Cultuurnota cycle</span><span class="pill">ANBI + match-funding</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAKEHOLDER ANALYSIS -->
+<section>
+  <div class="con">
+    <div class="slbl">Stakeholder analysis</div>
+    <h2 class="stitle">Expectations, tensions and balance strategies</h2>
+    <div class="g3 reveal" style="margin-bottom:2rem">
+      <div class="card">
+        <div class="lwho lg" style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem;color:var(--gold)">Funders</div>
+        <h3>Expectations & dynamics</h3>
+        <p>Funders expect measurable outputs: reach, social impact, accountability reports. Civera et al. (2025): relationships are built through stakeholder recognition, continuous dialogue and demonstrable support. Loach et al. (2017): institutions are now evaluated via a triple bottom line — social, economic and environmental impact.</p>
+      </div>
+      <div class="card">
+        <div class="lwho la" style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem;color:var(--acc)">Artists</div>
+        <h3>Roles & needs</h3>
+        <p>Artists are both the most central and most vulnerable stakeholder group. The institution's core function: enabling aesthetic development without market conformity (Tavano Blessi et al., 2011). Preece & Kerrigan (2015): being forced to market their identity causes stress and identity conflicts. Digital visibility is a form of respect — not just promotion.</p>
+      </div>
+      <div class="card">
+        <div class="lwho lb" style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem;color:var(--blue)">Audiences</div>
+        <h3>Motivation & loyalty patterns</h3>
+        <p>Murray (2005): aesthetic value is secondary — the primary motivation is instrumental social bonding. Paswan & Troy (2004): motivations include altruistic (arts preservation), self-interested (social recognition, member benefits) and hedonic (love of art). Oldenburg (1999): the 3rd place function — voluntary, informal gathering outside home and work.</p>
+      </div>
+    </div>
+    <div class="banner reveal">
+      <div class="banner-line" style="background:var(--coral)"></div>
+      <div>
+        <div class="blbl" style="color:var(--coral)">Core tension — artistic integrity vs. financial sustainability</div>
+        <div class="btxt">Fassin (2012): stakeholder management is fundamentally about balancing mutually exclusive demands. Power is asymmetrically distributed: funders with financial resources exercise material power, while artists and local communities depend on management goodwill. BARC/SocialRespons (2024) documented this as the "measurement paradox" in 13 Danish cultural houses: the institution's strongest strategy — relational transformation — is the least legible to funding logic. Institutions produce impact but cannot prove it; without proof, funding stays constrained.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section id="findings">
+  <div class="con">
+    <div class="slbl">Findings & analysis</div>
+    <h2 class="stitle">Cross-country synthesis</h2>
+    <p class="sintro">The digital content analysis confirms the study's core finding across all three countries: the funding model shapes not only institutional strategy but digital communication capacity.</p>
+
+    <div class="g3 reveal" style="margin-bottom:2rem">
+      <div class="card" style="border-top:3px solid var(--acc)">
+        <h3>Finding 1</h3>
+        <p>Institutional sustainability depends on a simultaneous multi-stakeholder approach encompassing funders, artists and audiences (Freeman, 1984). No single stakeholder can be prioritised without structural costs to the others.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--gold)">
+        <h3>Finding 2</h3>
+        <p>The funding system's structure directly shapes marketing strategy. Each national model produces different strategic requirements — confirming that no universal multi-stakeholder marketing framework is adequate for independent cultural institutions.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--blue)">
+        <h3>Finding 3</h3>
+        <p>Digital transformation produces both significant opportunities and structural difficulties (Walmsley, 2016). The primary barrier to digital dialogue is not intent, but structural resource capacity — itself determined by the funding model.</p>
+      </div>
+    </div>
+    <div class="card reveal" style="border-top:3px solid var(--coral);margin-bottom:2rem">
+      <h3>Finding 4 — three original contributions to the literature</h3>
+      <p style="margin-top:.4rem">First: systematic comparative research on independent cultural institutions in a Scandinavian context is extremely limited — this study fills that geographic and methodological gap. Second: existing literature insufficiently addresses the paradoxes in implementing participation and inclusion goals, particularly the relationship between digital communication capacity and funding structure. Third and most original: real-time digital content analysis of six institutions demonstrates empirically that funding model shapes communication strategy, and that no universal model is adequate — substantiating Civera et al.'s (2025) general thesis in a specific sector and geography.</p>
+    </div>
+
+    <h3 style="font-size:16px;font-weight:500;margin-bottom:1rem">Institutional comparisons</h3>
+    <div class="g2 reveal">
+      <div class="banner" style="margin-bottom:0">
+        <div class="banner-line" style="background:var(--acc)"></div>
+        <div>
+          <div class="blbl" style="color:var(--acc)">Denmark — strengths & vulnerabilities</div>
+          <div class="btxt"><strong>Strengths:</strong> Statens Kunstfond's systematic structure; Kulturhusene coordination network; strong digital infrastructure. <strong>Vulnerability:</strong> High public funding dependency. Tavano Blessi et al. (2011): professional fundraising is not embedded in organisational culture. Bakhshi & Throsby (2010): contraction in both public and private funding is forcing institutions to seek new revenue sources.</div>
+        </div>
+      </div>
+      <div class="banner" style="margin-bottom:0">
+        <div class="banner-line" style="background:var(--gold)"></div>
+        <div>
+          <div class="blbl" style="color:var(--gold)">Transferable lessons from Sweden & Netherlands</div>
+          <div class="btxt"><strong>From Sweden:</strong> Fasching's musician ownership and audience membership model reduces dependence on state funding while protecting autonomy. <strong>From Netherlands:</strong> Match-funding, ANBI transparency and Kunstenplan cycle (4-year accountability) offer the most practically transferable mechanisms. Amsterdam's artist-led structures and tax-advantaged foundation model are directly adaptable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL -->
+<section id="model">
+  <div class="con">
+    <div class="slbl">Practical recommendations</div>
+    <h2 class="stitle">The hybrid model</h2>
+    <p class="sintro">Fasching's ownership structure + Melkweg's digital strategy + Kulturhusene's coordination network — distilled into a structural framework for Danish independent cultural institutions.</p>
+
+    <h3 style="font-size:15px;font-weight:500;margin-bottom:.4rem">Ownership structure <span style="font-size:12px;color:var(--ink3);font-weight:400">— from Fasching to Denmark</span></h3>
+    <p style="font-size:14px;color:var(--ink2);margin-bottom:1.25rem;font-weight:300">Institutions that belong to no one remain fragile. The Fasching model provides structural answers to all three stakeholder expectations simultaneously.</p>
+    <div class="ownrow reveal">
+      <div class="own oa">
+        <div class="ownpct">51%</div>
+        <div class="ownnm">Artist cooperative</div>
+        <div class="ownd">Artist association for the relevant discipline. Majority on the board. Programme decisions structurally independent from funding pressure.</div>
+        <div class="ownsrc">Source: FSJ model, Fasching Stockholm (est. 1977)</div>
+      </div>
+      <div class="own ob">
+        <div class="ownpct">29%</div>
+        <div class="ownnm">Audience membership association</div>
+        <div class="ownd">Low annual fee. Board representation. "This is my institution" feeling built structurally. Modelled on Faschings Vänner (4,000 members, 250 SEK/year).</div>
+        <div class="ownsrc">Source: Faschings Vänner membership model</div>
+      </div>
+      <div class="own og">
+        <div class="ownpct">20%</div>
+        <div class="ownnm">Independent board</div>
+        <div class="ownd">Finance, law and cultural policy expertise. Financial oversight and crisis management. Affiliated with no stakeholder group.</div>
+        <div class="ownsrc">Source: OT301 Amsterdam self-management model</div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+    <h3 style="font-size:15px;font-weight:500;margin-bottom:.4rem">Funding model <span style="font-size:12px;color:var(--ink3);font-weight:400">— from the Netherlands to Denmark</span></h3>
+    <p style="font-size:14px;color:var(--ink2);margin-bottom:1.25rem;font-weight:300">Current Danish dependency: 80%+ municipal. Target: no single source exceeds 35%.</p>
+    <div class="fwrap reveal">
+      <div class="frow"><span class="flbl">Municipal grant</span><div class="ftrk"><div class="ffil" style="width:30%;background:#378ADD"></div></div><span class="fpct">30%</span></div>
+      <div class="frow"><span class="flbl">Foundation funds</span><div class="ftrk"><div class="ffil" style="width:22%;background:#1e4d2b"></div></div><span class="fpct">22%</span></div>
+      <div class="frow"><span class="flbl">Membership revenues</span><div class="ftrk"><div class="ffil" style="width:15%;background:#9a6b00"></div></div><span class="fpct">15%</span></div>
+      <div class="frow"><span class="flbl">Tickets + events</span><div class="ftrk"><div class="ffil" style="width:18%;background:#7F77DD"></div></div><span class="fpct">18%</span></div>
+      <div class="frow"><span class="flbl">Own revenue</span><div class="ftrk"><div class="ffil" style="width:15%;background:#b84030"></div></div><span class="fpct">15%</span></div>
+      <div class="frule">Golden rule: match-funding — every 1 unit of private funding triggers 1 unit of public funding (Mondriaan Fonds / TrygFonden model).</div>
+    </div>
+
+    <div class="gap"></div>
+    <h3 style="font-size:15px;font-weight:500;margin-bottom:.4rem">Digital strategy <span style="font-size:12px;color:var(--ink3);font-weight:400">— from Melkweg to Denmark</span></h3>
+    <p style="font-size:14px;color:var(--ink2);margin-bottom:1.25rem;font-weight:300">One channel trying to speak to everyone ends up speaking to no one. Structural digital capacity requires dedicated resource allocation.</p>
+    <div class="dtabs reveal">
+      <button class="dtab on" onclick="showD('d-f',this)">For funders</button>
+      <button class="dtab" onclick="showD('d-a',this)">For artists</button>
+      <button class="dtab" onclick="showD('d-i',this)">For audiences</button>
+    </div>
+    <div id="d-f" class="dpanel on">
+      <div class="g3">
+        <div class="card"><h3>Website transparency section</h3><p>SROI summary, annual impact report, reach data. FREJ/ANBI foundation status publicly disclosed. Funder accountability demands automatically met — no separate report needed per funder visit.</p></div>
+        <div class="card"><h3>Sector coordination data</h3><p>Kulturhusene standard: comparable data from 460 institutions. Not a single institution's voice — the collective sector argument. Significantly stronger for policy advocacy.</p></div>
+        <div class="card"><h3>Numbers + stories together</h3><p>SROI provides quantitative ground. User stories make relational impact visible. The two work alongside each other — not instead of each other. Both are necessary; neither is sufficient alone.</p></div>
+      </div>
+    </div>
+    <div id="d-a" class="dpanel">
+      <div class="g3">
+        <div class="card"><h3>One channel per programme area</h3><p>Melkweg segmentation: separate Instagram channel per genre/discipline. Content tailored to artist communities — process narrative and development, not event announcements.</p></div>
+        <div class="card"><h3>R&D platform identity</h3><p>Workshops, mentoring, residencies at the centre of the website. Artist as "co-creator" not "part of the programme". Preece & Kerrigan (2015): brand value emerges from these interactions.</p></div>
+        <div class="card"><h3>Visibility builds trust</h3><p>Artist biography and production process take centre stage. When the institution makes artists visible digitally, the relationship becomes reciprocal — a structural form of fair practice.</p></div>
+      </div>
+    </div>
+    <div id="d-i" class="dpanel">
+      <div class="g3">
+        <div class="card"><h3>Platform by audience age</h3><p>30+: Facebook community. Young: Instagram discovery. Very young: TikTok reach. Denmark's 99% internet penetration means every audience segment is reachable — but on different platforms.</p></div>
+        <div class="card"><h3>Two-way dialogue</h3><p>Active community communication, not passive announcements. Feedback loops, member-only content, post-event conversations. Digital editor: 5% of membership revenue allocated (structural capacity, not good intentions).</p></div>
+        <div class="card"><h3>Stage 1 → 2 → 3</h3><p>Observer → Participant → Contributor. Physical space intentionally designed for this transition. Digital content feeds every stage — and the membership model makes Stage 3 governance-level participation possible.</p></div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+    <h3 style="font-size:15px;font-weight:500;margin-bottom:1rem">Structural responses to each stakeholder</h3>
+    <div class="syng reveal">
+      <div class="sync sy-g">
+        <h3>Funder</h3>
+        <p>SROI + Stage tracking + Kulturhusene sector data. Social impact language for municipalities, innovation language for foundations — two tailored reports from the same institution. Coordination network enables sector-level policy argument.</p>
+        <div class="pills" style="margin-top:.6rem"><span class="pill">SROI pilot 2027</span><span class="pill">Sector standard 2028</span></div>
+      </div>
+      <div class="sync sy-a">
+        <h3>Artist</h3>
+        <p>Cooperative majority + Fair Practice + fair pay fund (8% of ticket revenue) + digital visibility + R&D platform. Autonomy is structural — independent of funding pressure through the ownership model.</p>
+        <div class="pills" style="margin-top:.6rem"><span class="pill">Fair Practice mandatory</span><span class="pill">Residency programme</span></div>
+      </div>
+      <div class="sync sy-b">
+        <h3>Audience</h3>
+        <p>Membership association board representation + Stage 1→2→3 space design + community digital channel + low-threshold membership. "This is my institution" built structurally, not through goodwill.</p>
+        <div class="pills" style="margin-top:.6rem"><span class="pill">Low annual fee</span><span class="pill">Board vote</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATOR -->
+<section id="simulator">
+  <div class="con">
+    <div class="slbl">Interactive tool</div>
+    <h2 class="stitle">Funding strategy simulator</h2>
+    <p class="sintro">Adjust the funding mix — see in real time which communication strategy to use and which stakeholder tensions to manage. The thesis's core finding made interactive.</p>
+    <div class="simbox reveal">
+      <p class="simintro">The thesis's core finding: <strong>the funding model shapes strategy — there is no universal prescription.</strong> Move the sliders to observe why Danish, Swedish and Dutch institutions follow fundamentally different marketing strategies.</p>
+      <div class="simlbl">Build your funding model</div>
+      <div class="slgrid">
+        <div class="slrow"><span class="sllbl">Municipal grant</span><input type="range" min="0" max="90" step="1" value="55" id="s-bel" oninput="calc()"><span class="slval" id="v-bel">55%</span></div>
+        <div class="slrow"><span class="sllbl">Foundation funds</span><input type="range" min="0" max="60" step="1" value="20" id="s-vak" oninput="calc()"><span class="slval" id="v-vak">20%</span></div>
+        <div class="slrow"><span class="sllbl">Membership revenues</span><input type="range" min="0" max="40" step="1" value="10" id="s-uye" oninput="calc()"><span class="slval" id="v-uye">10%</span></div>
+        <div class="slrow"><span class="sllbl">Tickets + events</span><input type="range" min="0" max="50" step="1" value="10" id="s-bil" oninput="calc()"><span class="slval" id="v-bil">10%</span></div>
+        <div class="slrow"><span class="sllbl">Own revenue</span><input type="range" min="0" max="40" step="1" value="5" id="s-ken" oninput="calc()"><span class="slval" id="v-ken">5%</span></div>
+      </div>
+      <div class="totrow">
+        <span class="totlbl">Total</span>
+        <span class="totval" id="total">100%</span>
+        <span style="font-size:11px;color:var(--ink3);margin-left:6px" id="total-note">balanced</span>
+      </div>
+      <div class="simlbl">Stakeholder strategy output</div>
+      <div class="resgrid">
+        <div class="rcard" id="c-fon"><div class="rw rwf">Funder</div><div class="rt" id="t-fon">—</div><div class="rb" id="b-fon">—</div><span class="rtag" id="tag-fon"></span></div>
+        <div class="rcard" id="c-san"><div class="rw rws">Artist</div><div class="rt" id="t-san">—</div><div class="rb" id="b-san">—</div><span class="rtag" id="tag-san"></span></div>
+        <div class="rcard" id="c-izl"><div class="rw rwi">Audience</div><div class="rt" id="t-izl">—</div><div class="rb" id="b-izl">—</div><span class="rtag" id="tag-izl"></span></div>
+      </div>
+      <div class="insbox" id="insight">—</div>
+      <div class="mrow">
+        <span style="font-size:11px;color:var(--ink3)">Load reference model:</span>
+        <button class="mbtn" onclick="setModel('dan')"><span class="mdot" style="background:#1e4d2b"></span>Denmark today</button>
+        <button class="mbtn" onclick="setModel('fas')"><span class="mdot" style="background:#378ADD"></span>Fasching</button>
+        <button class="mbtn" onclick="setModel('mel')"><span class="mdot" style="background:#9a6b00"></span>Melkweg</button>
+        <button class="mbtn" onclick="setModel('hib')"><span class="mdot" style="background:#7F77DD"></span>Hybrid model</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLEMENTATION -->
+<section>
+  <div class="con">
+    <div class="slbl">Implementation pathway</div>
+    <h2 class="stitle">2026–2030 with Kulturhusene i Danmark</h2>
+    <p class="sintro">No single institution implements this model alone. The 460-institution coordination network is ready ground for both piloting and scaling. The Trivselskommissionen (2025) policy window is currently open.</p>
+    <div class="tl reveal">
+      <div class="tli">
+        <div class="tldot" style="color:#378ADD"></div>
+        <div class="tlwhen">2026 — foundation</div>
+        <div class="tlwhat">Ownership and funding model established</div>
+        <div class="tlhow">Artist cooperative registered. Audience association membership campaign. FREJ foundation application. Fair Practice Code signed. Digital editor hired (funded by 5% of membership revenue).</div>
+      </div>
+      <div class="tli">
+        <div class="tldot" style="color:#1e4d2b"></div>
+        <div class="tlwhen">2027 — digital & measurement</div>
+        <div class="tlwhat">Segmentation and data infrastructure</div>
+        <div class="tlhow">Separate digital channels by programme area. 3-question exit survey for all events. Stage transition tracking begins. First SROI pilot report with 10 institutions.</div>
+      </div>
+      <div class="tli">
+        <div class="tldot" style="color:#9a6b00"></div>
+        <div class="tlwhen">2028 — coordination network integration</div>
+        <div class="tlwhat">Becomes the sector standard</div>
+        <div class="tlhow">Joint impact reporting standard via Kulturhusene coordination. EU Creative Europe application on behalf of the network. Guide published for institutions wishing to adopt the model.</div>
+      </div>
+      <div class="tli">
+        <div class="tldot" style="color:#7F77DD"></div>
+        <div class="tlwhen">2029–2030 — maturity</div>
+        <div class="tlwhat">Self-sustaining system</div>
+        <div class="tlhow">Membership revenue reaches 15%. Digital capacity self-funded. Reference model in policy documents. Parliamentary briefing.</div>
+      </div>
+    </div>
+    <div class="gap"></div>
+    <h3 style="font-size:16px;font-weight:500;margin-bottom:1rem">Tensions the model does not resolve</h3>
+    <div class="tengrid reveal">
+      <div class="tencard"><h4>The growth paradox</h4><p>As membership grows, community feeling risks dilution. Solution: maximum capacity is set — depth, not growth, is the goal (Fasching model).</p></div>
+      <div class="tencard"><h4>Democratic governance slowness</h4><p>Three actor groups = slow decision-making. Solution: operational decisions delegated to management, strategic decisions remain with the board.</p></div>
+      <div class="tencard"><h4>Fair Practice cost pressure</h4><p>Fair artist pay strains the short-term budget. But institutions that do not pay lose good artists — more expensive long-term (Been et al., 2024).</p></div>
+      <div class="tencard"><h4>Measurement paradox persists</h4><p>The strongest impact — trust, belonging, safe space — still cannot be counted. Solution: numbers + stories together, not instead of each other.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="con">
+    <div class="slbl">References</div>
+    <h2 class="stitle">Academic & sector sources</h2>
+    <div class="reflist">
+      <div class="refitem">Bakhshi, H., & Throsby, D. (2010). <em>Culture of innovation.</em> NESTA.</div>
+      <div class="refitem">Civera, C., et al. (2025). Multi-stakeholder marketing: Mapping the field. <em>Review of Managerial Science.</em> <a href="https://doi.org/10.1007/s11846-025-00849-2">DOI</a></div>
+      <div class="refitem">Cultuurmonitor. (2023). <em>Digital transformation 2023.</em> <a href="https://www.cultuurmonitor.nl">cultuurmonitor.nl</a></div>
+      <div class="refitem">Danmarks Statistik. (2023). Kulturministeriet udbetalte 14,7 mia. kr. i 2023. <a href="https://www.dst.dk/nyt/51282">dst.dk</a></div>
+      <div class="refitem">Danish Arts Foundation. (2025). <em>Our purpose.</em> <a href="https://www.statenskunstfond.dk/english">statenskunstfond.dk</a></div>
+      <div class="refitem">DataReportal. (2024). <em>Digital 2024: Denmark.</em> <a href="https://datareportal.com">datareportal.com</a></div>
+      <div class="refitem">DataReportal. (2025). <em>Digital 2025: Netherlands & Sweden.</em></div>
+      <div class="refitem">Eriksson, B., Reestorff, C. M., & Stage, C. (2017). RECcORD final project report. Aarhus University.</div>
+      <div class="refitem">Fassin, Y. (2012). Stakeholder management, reciprocity and stakeholder responsibility. <em>Journal of Business Ethics, 109(1),</em> 83–96. <a href="https://doi.org/10.1007/s10551-012-1381-8">DOI</a></div>
+      <div class="refitem">Freeman, R. E. (1984). <em>Strategic management: A stakeholder approach.</em> Pitman.</div>
+      <div class="refitem">Krajnović, A., Perković, A., & Rajko, M. (2020). Digital marketing in cultural institutions. <em>ENTRENOVA, 6(1),</em> 341–352.</div>
+      <div class="refitem">Kujala, J., Heikkinen, A., & Lehtimäki, H. (2012). Understanding stakeholder relationships. <em>Journal of Business Ethics, 109(1),</em> 53–65. <a href="https://doi.org/10.1007/s10551-012-1379-2">DOI</a></div>
+      <div class="refitem">Kulturhusene i Danmark. (2023). <em>Handleplan og kernebudskaber 2023–2025.</em></div>
+      <div class="refitem">Kulturens Analyseinstitut. (2023). Statens Kunstfond: Projektstøttede teatre.</div>
+      <div class="refitem">Larsson, T., & Svenson, P. (2001). Cultural policy in Sweden. <em>Journal of Arts Management, Law, and Society, 31(1),</em> 79–96. <a href="https://doi.org/10.1080/10632920109599580">DOI</a></div>
+      <div class="refitem">Loach, K., Rowley, J., & Griffiths, J. (2017). Cultural sustainability as a strategy for survival. <em>International Journal of Cultural Policy, 23(2),</em> 186–198.</div>
+      <div class="refitem">Loots, E., Piecyk, K., & Wijngaarden, Y. (2024). At the juncture of funding, policy, and technology. <em>International Journal of Cultural Policy, 30(1),</em> 118–134. <a href="https://doi.org/10.1080/10286632.2023.2173746">DOI</a></div>
+      <div class="refitem">Melkweg. (n.d.). Organization. <a href="https://www.melkweg.nl/en/about-us/organization/">melkweg.nl</a></div>
+      <div class="refitem">Murray, C. (2005). Cultural participation: A fuzzy cultural policy paradigm. In <em>Accounting for culture</em> (pp. 32–52). University of Ottawa Press.</div>
+      <div class="refitem">Nordicom. (2025). <em>Mediebarometern 2024.</em> <a href="https://www.nordicom.gu.se">nordicom.gu.se</a></div>
+      <div class="refitem">Oldenburg, R. (1999). <em>The great good place.</em> Marlowe & Company.</div>
+      <div class="refitem">Paswan, A. K., & Troy, L. C. (2004). Non-profit organization and membership motivation. <em>Journal of Marketing Theory and Practice, 12(2),</em> 1–15.</div>
+      <div class="refitem">Preece, C., & Kerrigan, F. (2015). Multi-stakeholder brand narratives. <em>Journal of Marketing Management, 31(11–12),</em> 1207–1230.</div>
+      <div class="refitem">Schulte-Basta, D. (2025). Definition and distinction of the concept cultural center. <em>European Journal of Cultural Management and Policy, 15.</em> <a href="https://doi.org/10.3389/ejcmp.2025.14704">DOI</a></div>
+      <div class="refitem">Tavano Blessi, G., Sacco, P. L., & Pilati, T. (2011). Independent artist-run centres. <em>Cultural Trends, 20(2),</em> 141–166. <a href="https://doi.org/10.1080/09548963.2011.563907">DOI</a></div>
+      <div class="refitem">Throsby, D. (2001). <em>Economics and culture.</em> Cambridge University Press.</div>
+      <div class="refitem">Union Kulturhuset. (2024). About us. <a href="https://union.kk.dk/en/about-us">union.kk.dk</a></div>
+      <div class="refitem">Walmsley, B. (2016). From arts marketing to audience enrichment. <em>Poetics, 58,</em> 66–78. <a href="https://doi.org/10.1016/j.poetic.2016.07.001">DOI</a></div>
+      <div class="refitem">World Cities Culture Forum. (2024). Stockholm cultural policy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Multi-Stakeholder Marketing Strategies in Independent Cultural Institutions:</strong> A Multi-Stakeholder Analysis from Sustainability, Artist Ecosystem, and Audience Engagement Perspectives</p>
+  <p>B. Sava Kayhan · Graduation Research Project · April 2026</p>
+  <p><strong>Primary case:</strong> Kulturhusene i Danmark &nbsp;·&nbsp; <strong>Comparative cases:</strong> Fasching Stockholm · Melkweg Amsterdam · De Balie Amsterdam · Södra Teatern · UNION Kulturhuset</p>
+</footer>
+
+<script>
+const models={dan:[55,25,5,10,5],fas:[30,15,20,25,10],mel:[28,22,8,22,20],hib:[30,22,15,18,15]};
+function setModel(k){const[b,v,u,bi,ke]=models[k];document.getElementById('s-bel').value=b;document.getElementById('s-vak').value=v;document.getElementById('s-uye').value=u;document.getElementById('s-bil').value=bi;document.getElementById('s-ken').value=ke;calc();}
+function calc(){
+  const bel=+document.getElementById('s-bel').value,vak=+document.getElementById('s-vak').value,uye=+document.getElementById('s-uye').value,bil=+document.getElementById('s-bil').value,ken=+document.getElementById('s-ken').value;
+  document.getElementById('v-bel').textContent=bel+'%';document.getElementById('v-vak').textContent=vak+'%';document.getElementById('v-uye').textContent=uye+'%';document.getElementById('v-bil').textContent=bil+'%';document.getElementById('v-ken').textContent=ken+'%';
+  const tot=bel+vak+uye+bil+ken,tv=document.getElementById('total'),tn=document.getElementById('total-note');
+  tv.textContent=tot+'%';
+  if(tot===100){tv.className='totval tv-ok';tn.textContent='balanced';}
+  else if(tot<100){tv.className='totval tv-warn';tn.textContent=(100-tot)+'% short';}
+  else{tv.className='totval tv-bad';tn.textContent=(tot-100)+'% over';}
+  let fT,fB,fTag,fC,sT,sB,sTag,sC,iT,iB,iTag,iC;
+  if(bel>=60){fT='High risk: single-source dependency';fB='Municipal budget cuts directly threaten the institution. Proving value via SROI is urgent. Kulturhusene coordination data essential for policy advocacy.';fTag='critical';fC='c-bad';}
+  else if(bel>=40){fT='Municipality-centred communication';fB='Social impact language is primary. Separate project language needed for foundations. Sector coordination data from Kulturhusene strengthens the argument.';fTag='caution';fC='c-warn';}
+  else{fT='Multilingual accountability';fB='Tailored report for each funder type. Social impact for municipality, innovation for foundation, community data for membership. Strong position — high crisis resilience.';fTag='strong';fC='c-ok';}
+  if(bel>60){sT='Autonomy under structural threat';sB='Municipal pressure can shape programme decisions. Fair Practice implementation becomes harder. Artist cooperative ownership is the structural solution.';sTag='at risk';sC='c-bad';}
+  else if(uye>=12){sT='Fasching model feasible';sB='Membership revenues strong enough to support artist cooperative + audience association ownership model. Artist board representation viable.';sTag='strong';sC='c-ok';}
+  else{sT='R&D platform strategy';sB='Foundation revenues can finance experimental programming. Fair Practice Code is sustainable at this level. Mentoring and residency programme affordable.';sTag='balanced';sC='';}
+  if(uye>=15){iT='Strong community ownership model';iB='Membership association strong enough for board representation. Budget for digital editor feasible. Walmsley\'s dialogue potential can be realised structurally.';iTag='strong';iC='c-ok';}
+  else if(uye>=8){iT='Membership growth needed';iB='Stage 1→2→3 transition programme should be the priority. Current level feeds community but cannot support governance-level participation.';iTag='develop';iC='c-warn';}
+  else{iT='Audience as consumers only';iB='Low membership = no sense of ownership. Oldenburg\'s 3rd place function weakens. Ticket-based model positions audiences as customers, not stakeholders.';iTag='risk';iC='c-bad';}
+  set('c-fon',fC,'t-fon',fT,'b-fon',fB,'tag-fon',fTag);
+  set('c-san',sC,'t-san',sT,'b-san',sB,'tag-san',sTag);
+  set('c-izl',iC,'t-izl',iT,'b-izl',iB,'tag-izl',iTag);
+  let ins='';
+  if(bel>=60)ins='<b>Denmark\'s vicious cycle is active:</b> High municipal dependency — data cannot be produced, funding stays fixed. Click "Hybrid model" to observe the structural alternative.';
+  else if(bel+vak<=55&&uye>=12&&bil+ken>=25)ins='<b>Close to the hybrid model target:</b> High funding diversity. Fasching ownership structure + Melkweg digital strategy has reached a viable level. Next step: SROI pilot with Kulturhusene.';
+  else if(vak>=25&&bel<45)ins='<b>Foundation-centred model:</b> Project-based funding is strong but short-term. Dutch cultuurnota model as reference: multi-year agreements and ANBI transparency are the priorities.';
+  else if(uye>=15&&bil>=15)ins='<b>Audience-centred model:</b> Membership and tickets are strong. Fasching\'s 4,000-member model is viable. Ground exists to establish an artist cooperative.';
+  else ins='<b>Core thesis finding:</b> The funding model shapes communication strategy — there is no universal prescription. Move the sliders to observe why three countries follow fundamentally different strategies.';
+  document.getElementById('insight').innerHTML=ins;
+}
+function set(cId,cClass,tId,tVal,bId,bVal,tagId,tagVal){
+  document.getElementById(cId).className='rcard '+(cClass||'');
+  document.getElementById(tId).textContent=tVal;
+  document.getElementById(bId).textContent=bVal;
+  const el=document.getElementById(tagId);el.textContent=tagVal;
+  el.className='rtag '+(tagVal==='critical'||tagVal==='at risk'||tagVal==='risk'?'tg-bad':tagVal==='caution'||tagVal==='develop'||tagVal==='balanced'?'tg-warn':'tg-ok');
+}
+function showC(id,btn){document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');btn.classList.add('on');}
+function showD(id,btn){document.querySelectorAll('.dpanel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.dtab').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');btn.classList.add('on');}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+calc();
+</script>
+</body>
+</html>
